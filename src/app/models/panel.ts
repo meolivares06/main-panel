@@ -1,6 +1,6 @@
 import { PanelConfig } from './panel.config';
-import { Tab } from './tab';
-export class Panel extends Tab {
+import { MyTab } from './tab';
+export class Panel extends MyTab {
   private panelConfig: Partial<PanelConfig>;
 
   constructor() {

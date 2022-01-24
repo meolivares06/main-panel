@@ -1,48 +1,48 @@
-import { Tab } from "./tab";
+import { MyTab } from "./tab";
 
 export class MainPanel {
-  private tabList: Array<Tab>;
-  private selectedTab: Tab | null;
+  private tabList: Array<MyTab>;
+  private selectedTab: MyTab | null;
 
   constructor() {
     this.tabList = [];
     this.selectedTab = null;
   }
 
-  setSelectedTab(tab: Tab) {
+  setSelectedTab(tab: MyTab) {
     this.selectedTab = tab;
   }
 
-  getSelectedTab(): Tab | null {
+  getSelectedTab(): MyTab | null {
     return this.selectedTab;
   }
 
-  getTabList(): Array<Tab> {
+  getTabList(): Array<MyTab> {
     return [...this.tabList];
   }
 
-  addTab(newTab: Tab): Tab {
+  addTab(newTab: MyTab): MyTab {
     this.tabList = [...this.tabList, newTab];
     return newTab;
   }
 
-  getTab(id: string): Tab {
-    return this.tabList.filter((t: Tab) => t.getId() === id)[0];
+  getTab(id: string): MyTab {
+    return this.tabList.filter((t: MyTab) => t.getId() === id)[0];
   }
 
-  getTabPosition(tab: Tab): number {
-    return this.tabList.findIndex((t: Tab) => t.getId() === tab.getId());
+  getTabPosition(tab: MyTab): number {
+    return this.tabList.findIndex((t: MyTab) => t.getId() === tab.getId());
   }
 
   deleteTabByIndex(index: number): void {
     this.tabList = [...this.tabList.slice(0, index), ...this.tabList.slice(index + 1)];
   }
 
-  deleteTab(tab: Tab): void {
-    this.tabList = [...this.tabList.filter((t: Tab) => t.getId() !== tab.getId())];
+  deleteTab(tab: MyTab): void {
+    this.tabList = [...this.tabList.filter((t: MyTab) => t.getId() !== tab.getId())];
   }
 
   deleteTabById(id: string): void {
-    this.tabList = [...this.tabList.filter((t: Tab) => t.getId() !== id)];
+    this.tabList = [...this.tabList.filter((t: MyTab) => t.getId() !== id)];
   }
 }

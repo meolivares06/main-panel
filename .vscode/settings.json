@@ -4,4 +4,14 @@
     "titleBar.activeBackground": "#054560",
     "titleBar.activeForeground": "#F5FCFF"
   }
+  // "workbench.colorCustomizations": {
+  //   "activityBar.background": "#033144",
+  //   "titleBar.activeBackground": "#054560",
+  //   "titleBar.activeForeground": "#F5FCFF"
+  // }
+  // "workbench.colorCustomizations": {
+  //   "activityBar.background": "#033144",
+  //   "titleBar.activeBackground": "#054560",
+  //   "titleBar.activeForeground": "#F5FCFF"
+  // }
 }

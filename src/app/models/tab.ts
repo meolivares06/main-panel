@@ -1,4 +1,4 @@
-export class Tab {
+export class MyTab {
   private id: string;
   private title: string;
 

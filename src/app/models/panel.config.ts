@@ -1,8 +1,9 @@
-export interface Tab {
+export interface ITab {
   id: string;
   title: string;
+  data?: any;
 }
-export interface PanelConfig extends Tab {
+export interface PanelConfig extends ITab {
   width: number | undefined;
   height: number | undefined;
 }
