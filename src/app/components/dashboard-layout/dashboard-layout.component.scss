@@ -1,0 +1,22 @@
+@import '~@healthcatalyst/cashmere/scss/colors';
+
+.drawer-content {
+    height: calc(100vh - 50px ); /* used to show menu scrolling effect*/
+    border: solid 1px red;
+    button {
+        margin-bottom: 10px;
+    }
+}
+
+.drawer-label {
+    margin: 0 50px 0 0;
+}
+
+.fa-plus {
+    color: $blue;
+    margin: 0 0 0 auto;
+}
+
+.icon-left {
+    margin-right: 10px;
+}

@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { GridComponent } from './components/grid/grid.component';
 import { AnchorDirective } from './core/anchor.directive';
 import { PanelComponent } from './components/panel/panel.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PanelComponent } from './components/panel/panel.component';
     MainpanelComponent,
     GridComponent,
     AnchorDirective,
-    PanelComponent
+    PanelComponent,
+    AccordionComponent,
+    DashboardLayoutComponent
   ],
   imports: [
     BrowserModule, // run in the browser
