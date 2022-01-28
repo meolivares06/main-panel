@@ -1,4 +1,4 @@
-
+import { TabChildsService } from './../../core/tab-childs.service';
 import { Panel } from '../../models/panel';
 import { MyTabItem } from '../../core/MyTabItem';
 import { AnchorDirective } from '../../core/anchor.directive';
@@ -29,6 +29,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
   {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'}
 ];
+
+const componentList = {
+  GridComponent,
+  PanelComponent,
+  AccordionComponent
+}
+// const getComponentClass = (componentName: string | number): unknown => {
+//   return componentList[componentName] as typeof componentName;
+// }
+
+type configDirective = {
+  typeComponent: string;
+  data: {
+    title: string,
+    data: PeriodicElement[],
+    some: string
+  }
+}
 @Component({
   selector: 'app-mainpanel',
   templateUrl: './mainpanel.component.html',
@@ -40,25 +58,36 @@ export class MainpanelComponent implements OnInit {
 
   item: MyTabItem = new MyTabItem(GridComponent, { title: 'MyTabItem' })
   itemList: MyTabItem[] = []
-  constructor() {}
+  componentList = componentList;
+  constructor(private tabChildsService: TabChildsService) {
+    this.setTabChilds();
+  }
 
   ngOnInit(): void {}
 
+  setTabChilds(): void {
+    this.itemList = [...this.tabChildsService.getTabChilds()];
+  }
 
   onAddNewTabGrid(): void {
-    this.itemList = [...this.itemList, new MyTabItem(GridComponent, {
-      title: 'MyGridTabItem',
-      data: [...ELEMENT_DATA],
-      some: 'Some Grid Config'
-    })];
+    const config: configDirective = {
+      typeComponent: 'GridComponent',
+      data: {
+        title: 'MyGridTabItem',
+        data: [...ELEMENT_DATA],
+        some: 'Some Grid Config'
+      }
+    }
+    this.tabChildsService.addNewTab(config);
+    this.setTabChilds();
   }
 
   onAddNewTabPanel(): void {
-    this.itemList = [...this.itemList, new MyTabItem(PanelComponent, { title: 'MyPanelTabItem', some: 'Some Panel Config' })];
+    this.itemList = [...this.itemList, new MyTabItem(componentList['PanelComponent'], { title: 'MyPanelTabItem', some: 'Some Panel Config' })];
   }
 
   onAddNewTabAcc(): void {
-    this.itemList = [...this.itemList, new MyTabItem(AccordionComponent, { title: 'MyAccTabItem', some: 'Some Panel Config' })];
+    this.itemList = [...this.itemList, new MyTabItem(componentList['AccordionComponent'], { title: 'MyAccTabItem', some: 'Some Panel Config' })];
   }
 
   selectionChanged(event: TabChangeEvent): void {

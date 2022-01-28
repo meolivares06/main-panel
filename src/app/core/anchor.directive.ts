@@ -9,9 +9,7 @@ import { MyTabItem } from './MyTabItem';
 export class AnchorDirective implements OnChanges {
   @Input() myTabItem: MyTabItem = new MyTabItem(GridComponent, {title: 'default title'});
   constructor(public viewContainerRef: ViewContainerRef) {
-    console.log("🚀 ~ file: anchor.directive.ts ~ line 9 ~ AnchorDirective ~ constructor ~ viewContainerRef", this.myTabItem)
-
-
+    console.log("🚀 ~ file: anchor.directive.ts ~ line 9 ~ AnchorDirective ~ constructor ~ viewContainerRef", this.myTabItem);
   }
 
   ngOnChanges(changes: SimpleChanges) {
