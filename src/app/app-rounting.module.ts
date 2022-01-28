@@ -1,5 +1,5 @@
 import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
-import { MainpanelComponent } from './mainpanel/mainpanel.component';
+import { MainpanelComponent } from './components/mainpanel/mainpanel.component';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 

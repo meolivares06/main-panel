@@ -20,3 +20,14 @@
 .icon-left {
     margin-right: 10px;
 }
+
+.main-area {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
+.main-area__main,
+.main-area__secondary {
+  overflow-y: auto;
+}

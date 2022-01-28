@@ -46,7 +46,14 @@
               <span *ngIf="leftDrawer.opened">Hide Filters</span>
               <span *ngIf="!leftDrawer.opened">Show Filters</span>
           </button>
-          <app-mainpanel></app-mainpanel>
+          <div class="main-area">
+            <div class="main-area__main">
+              <app-mainpanel></app-mainpanel>
+            </div>
+            <div class="main-area__secondary">
+              <app-mainpanel></app-mainpanel>
+            </div>
+          </div>
       </div>
   </hc-drawer-container>
 </div>

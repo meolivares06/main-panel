@@ -7,7 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { MainpanelComponent } from './mainpanel/mainpanel.component';
+import { MainpanelComponent } from './components/mainpanel/mainpanel.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { GridComponent } from './components/grid/grid.component';
